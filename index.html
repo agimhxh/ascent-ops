@@ -1,1 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ascent Ops | Remote Back-Office Support</title>
+  <meta name="description" content="Ascent Ops provides remote back-office support across operations, administration, procurement support, reporting, and coordination." />
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --text: #17202a;
+      --muted: #5f6b7a;
+      --line: #e7ebf0;
+      --accent: #1f4c8f;
+      --accent-dark: #163867;
+      --max: 1120px;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(23, 32, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(247, 248, 250, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero {
+      padding: 84px 0 56px;
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .panel,
+    .service,
+    .step,
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 44px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid #d7e3f5;
+      background: #eef4fd;
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3vw, 38px);
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 26px;
+    }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 30px 0 18px;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service,
+    .step {
+      padding: 24px;
+    }
+
+    .service p,
+    .step p,
+    .contact-card p {
+      font-size: 16px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      background: #eef4fd;
+      border-radius: 999px;
+      padding: 7px 10px;
+    }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .list div {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      color: var(--text);
+      box-shadow: var(--shadow);
+      font-weight: 600;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+      margin-top: 8px;
+    }
+
+    .contact-card {
+      padding: 28px;
+    }
+
+    .contact-box {
+      background: #0f1720;
+      color: white;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box p,
+    .contact-box a {
+      color: rgba(255,255,255,0.84);
+    }
+
+    footer {
+      padding: 32px 0 50px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .footer-box {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 920px) {
+      .hero-wrap,
+      .grid-2,
+      .grid-3,
+      .contact-wrap,
+      .list {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero-card {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <span class="brand-mark">AO</span>
+        <span>Ascent Ops</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="hero-card">
+          <span class="eyebrow">Remote back-office support</span>
+          <h1>Reliable support for the work that keeps your business moving</h1>
+          <p>Ascent Ops helps growing teams stay organized with remote support across operations, administration, procurement support, reporting, coordination, and business support tasks.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Book a call</a>
+            <a class="btn btn-secondary" href="#services">Our services</a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="panel">
+            <h3>What we handle</h3>
+            <ul>
+              <li>Operations coordination</li>
+              <li>Administrative support</li>
+              <li>Procurement and vendor support</li>
+              <li>Research, reporting, and internal documents</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Who we help</h3>
+            <p>Small and mid-sized businesses, consultants, hospitality groups, founders, and remote teams that need dependable support behind the scenes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Practical support, clear communication, steady follow-through</h2>
+          <p>Businesses often lose time on the work that must get done but does not directly bring revenue. Ascent Ops steps in to handle that work with structure, consistency, and a business-minded approach.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="badge">Services</span>
+          <h2>Support built around day-to-day business needs</h2>
+        </div>
+        <div class="grid-2">
+          <article class="service">
+            <h3>Operations support</h3>
+            <p>Task tracking, coordination, reporting support, process follow-up, internal organization, and general operational support.</p>
+          </article>
+          <article class="service">
+            <h3>Administrative support</h3>
+            <p>Document preparation, file organization, inbox and calendar support, data entry, formatting, and record keeping.</p>
+          </article>
+          <article class="service">
+            <h3>Procurement and vendor support</h3>
+            <p>Supplier outreach, quote comparisons, purchase tracking, vendor coordination, and documentation support.</p>
+          </article>
+          <article class="service">
+            <h3>Business support</h3>
+            <p>Research, presentations, spreadsheets, meeting notes, SOP drafting, templates, and workflow support.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="badge">Best fit</span>
+          <h2>Teams that benefit most</h2>
+        </div>
+        <div class="list">
+          <div>Small and mid-sized businesses</div>
+          <div>Founders and consultants</div>
+          <div>Hospitality groups</div>
+          <div>Remote teams</div>
+          <div>Businesses with growing admin workload</div>
+          <div>Companies needing flexible support capacity</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="badge">About</span>
+          <h2>Built for businesses that need dependable support behind the scenes</h2>
+          <p>Ascent Ops is designed to help teams stay on top of recurring work across operations and administration. We bring structure, responsiveness, and consistency to the tasks that often pile up in growing businesses.</p>
+        </div>
+        <div class="grid-3">
+          <article class="service">
+            <h3>Organized</h3>
+            <p>Clear files, clear tasks, clear follow-up.</p>
+          </article>
+          <article class="service">
+            <h3>Flexible</h3>
+            <p>Support can be shaped around your workload and pace.</p>
+          </article>
+          <article class="service">
+            <h3>Business-minded</h3>
+            <p>We focus on practical output that helps your team move faster.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-heading">
+          <span class="badge">Process</span>
+          <h2>A simple way to get started</h2>
+        </div>
+        <div class="grid-3">
+          <article class="step">
+            <h3>1. Intro call</h3>
+            <p>We understand your business, pain points, and where support is needed most.</p>
+          </article>
+          <article class="step">
+            <h3>2. Scope the support</h3>
+            <p>We define tasks, priorities, and the setup that fits your workflow.</p>
+          </article>
+          <article class="step">
+            <h3>3. Start working</h3>
+            <p>We begin with clear priorities and steady communication.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-wrap">
+        <div class="contact-card">
+          <span class="badge">Contact</span>
+          <h2>Let’s make your back-office work lighter</h2>
+          <p>For the first version of the site, the easiest setup is to keep contact simple. Use email first, and later we can add a proper form.</p>
+          <p><strong>Email:</strong> <a href="mailto:hello@ascent-ops.com">hello@ascent-ops.com</a></p>
+          <p><strong>Domain:</strong> ascent-ops.com</p>
+        </div>
+        <div class="contact-box">
+          <h3>What to include in your message</h3>
+          <p>Your company name, the type of support you need, and whether you are looking for ongoing help or project-based support.</p>
+          <p><a href="mailto:hello@ascent-ops.com?subject=Ascent%20Ops%20Inquiry">Email Ascent Ops</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      <div>
+        <strong>Ascent Ops</strong><br />
+        Remote back-office support for growing businesses.
+      </div>
+      <div>© 2026 Ascent Ops. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
 
