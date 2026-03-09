@@ -68,6 +68,49 @@
     display: block;
 }
 
+.section-image {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 24px 0 34px;
+}
+
+.section-image img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+    .about-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.about-image-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.about-image-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 920px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+    
   .hero {
     padding: 48px 0 56px;
 }
@@ -440,6 +483,10 @@
       <p>Ascent Ops helps organizations manage procurement, operations, and training activities through reliable operational support and practical execution.</p>
     </div>
 
+<div class="section-image">
+  <img src="services-image.png" alt="Business support and operational coordination workspace">
+</div>
+    
     <div class="grid-3">
       <article class="service">
         <h3>Procurement & Logistics Support</h3>
@@ -578,16 +625,26 @@
   </div>
 </section>
   
-  <section class="section" id="about">
+<section class="section" id="about">
   <div class="container">
-    <div class="section-heading">
-      <span class="badge">About</span>
-      <h2>About the Founder</h2>
-      <p>Ascent Ops was founded by Agim Hoxha, a procurement and operations professional with experience supporting international development projects and organizational operations.</p>
-      <p>His work includes procurement coordination, operational support, logistics planning, and administrative management across complex projects and teams.</p>
-      <p>Through Ascent Ops, the goal is to provide organizations with reliable operational support that helps projects and activities move forward efficiently.</p>
+    <div class="about-grid">
+      <div>
+        <div class="section-heading">
+          <span class="badge">About</span>
+          <h2>About the Founder</h2>
+        </div>
+
+        <p>Ascent Ops was founded by Agim Hoxha, a procurement and operations professional with experience supporting international development projects and organizational operations.</p>
+        <p>His work includes procurement coordination, operational support, logistics planning, and administrative management across complex projects and teams.</p>
+        <p>Through Ascent Ops, the goal is to provide organizations with reliable operational support that helps projects and activities move forward efficiently.</p>
+      </div>
+
+      <div class="about-image-card">
+        <img src="founder-portrait.jpg" alt="Portrait of Agim Hoxha">
+      </div>
     </div>
   </div>
+</section>
 </section>
 
 <section class="section" id="contact">
