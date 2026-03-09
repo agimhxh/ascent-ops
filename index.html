@@ -23,11 +23,11 @@
       box-sizing: border-box;
     }
 
-    html {
+  html {
       scroll-behavior: smooth;
     }
 
-    body {
+  body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
@@ -35,85 +35,90 @@
       line-height: 1.6;
     }
 
-    a {
+  a {
       color: inherit;
       text-decoration: none;
     }
 
-    .container {
+  .container {
       width: min(100% - 32px, var(--max));
       margin: 0 auto;
     }
-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(247, 248, 250, 0.94);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(247, 248, 250, 0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
 }
 
-.hero-image {
-  width: 100%;
-  overflow: hidden;
-  background: #dfe6ee;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 30px;
+  .hero-image {
+    width: 100%;
+    overflow: hidden;
+    background: #dfe6ee;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 30px;
 }
 
-.hero-image img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  display: block;
-}
-
-.hero {
-  padding: 48px 0 56px;
-}
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 14px 0;
-}
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      display: grid;
-      place-items: center;
-      color: white;
-      font-weight: 700;
-      box-shadow: var(--shadow);
-    }
-
-    nav ul {
-      display: flex;
-      gap: 22px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-  .logo {
-    height: 80px;
+  .hero-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
     display: block;
 }
 
+  .hero {
+    padding: 48px 0 56px;
+}
+    
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px 0;
+}
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+  .brand-mark {
+     width: 38px;
+     height: 38px;
+     border-radius: 12px;
+     background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+     display: grid;
+     place-items: center;
+     color: white;
+     font-weight: 700;
+     box-shadow: var(--shadow);
+}
+
+  nav ul {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+  .logo {
+     height: 80px;
+    display: block;
+}
+
+  nav a {
+    transition: color 0.2s ease;
+}
+    
   nav a:hover {
     color: var(--accent);
 }
@@ -354,7 +359,7 @@ header {
   <header>
     <div class="container nav">
       <a href="#top" class="brand">
-       <img src="AOLogoH.png" class="logo" alt="Ascent Ops">
+       <img src="AOLogoH.png" class="logo" alt="Ascent Ops Logo">
       </a>
       <nav>
         <ul>
@@ -375,13 +380,14 @@ header {
     <section class="hero">
       <div class="container hero-wrap">
         <div class="hero-card">
-            <h3>Operational support for organizations that need reliable execution.</h3>
+           <span class="eyebrow">Operational support</span>
+            <h1>Operational support for organizations that need reliable execution.</h1>
             <p>Ascent Ops provides procurement, logistics, operational coordination, and training support for companies, projects, and international organizations. We help teams execute their plans efficiently and reliably.</p>
             <p>Organizations often face operational challenges when managing suppliers, coordinating events, producing training materials, or handling logistics across teams and locations.</p>
             <p>Ascent Ops supports these activities by providing structured operational assistance and reliable execution support. Our work allows organizations to focus on strategy while we help ensure operations run smoothly.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">Contact Us</a>
-              <a class="btn btn-secondary" href="#services">Our services</a>
+              <a class="btn btn-primary" href="#contact">Get in touch</a>
+              <a class="btn btn-secondary" href="#services">View services</a>
             </div>
         </div>
 
